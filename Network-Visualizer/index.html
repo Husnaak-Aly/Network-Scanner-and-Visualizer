@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Visualizer</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            color: #333;
+            background-color: #f4f7f6;
+        }
+        #header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        #cy {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        #info {
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            width: 300px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 20px;
+            z-index: 5;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            transform: translateX(120%); /* Start off-screen */
+            opacity: 0;
+        }
+        #info.visible {
+            transform: translateX(0); /* Slide into view */
+            opacity: 1;
+        }
+        #info h2 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        #info p {
+            margin: 5px 0;
+        }
+        #info strong {
+            color: #34495e;
+        }
+        #ports-list {
+            list-style: none;
+            padding: 0;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        #ports-list li {
+            background-color: #ecf0f1;
+            padding: 8px;
+            border-radius: 4px;
+            margin-bottom: 5px;
+        }
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1.2em;
+            color: #7f8c8d;
+        }
+    </style>
+    <!-- Cytoscape.js library from a CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.23.0/cytoscape.min.js"></script>
+</head>
+<body>
+    <div id="header">Network Visualizer</div>
+    <div id="cy">
+        <div id="loading">Loading network map...</div>
+    </div>
+    <div id="info">
+        <!-- Details will be injected here by JavaScript -->
+    </div>
+    
+    <!-- Your visualization script -->
+    <script src="js/visualizer.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{
+    "nodes": [
+        {
+            "data": {
+                "id": "10.235.217.207",
+                "label": "(Host)\n10.235.217.207",
+                "type": "host",
+                "os": "D-Link DIR-835 WAP",
+                "ports": [
+                    {
+                        "portid": "53",
+                        "protocol": "tcp",
+                        "service": "domain"
+                    }
+                ]
+            }
+        },
+        {
+            "data": {
+                "id": "10.235.217.105",
+                "label": "(Router)\n10.235.217.105",
+                "type": "router",
+                "os": "Microsoft Windows 10 1607 - 11 23H2",
+                "ports": [
+                    {
+                        "portid": "135",
+                        "protocol": "tcp",
+                        "service": "msrpc"
+                    },
+                    {
+                        "portid": "139",
+                        "protocol": "tcp",
+                        "service": "netbios-ssn"
+                    },
+                    {
+                        "portid": "445",
+                        "protocol": "tcp",
+                        "service": "microsoft-ds"
+                    },
+                    {
+                        "portid": "2869",
+                        "protocol": "tcp",
+                        "service": "http"
+                    },
+                    {
+                        "portid": "3306",
+                        "protocol": "tcp",
+                        "service": "mysql"
+                    },
+                    {
+                        "portid": "4343",
+                        "protocol": "tcp",
+                        "service": "unicall"
+                    },
+                    {
+                        "portid": "4449",
+                        "protocol": "tcp",
+                        "service": "privatewire"
+                    }
+                ]
+            }
+        }
+    ],
+    "edges": [
+        {
+            "data": {
+                "source": "10.235.217.207",
+                "target": "10.235.217.105"
+            }
+        }
+    ]
+}
