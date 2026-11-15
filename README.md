@@ -48,11 +48,6 @@ sudo python scanner.py --target 192.168.1.0/24
 sudo python scanner.py --target 192.168.1.0/24 --ports 22,80,443 --output results.json
 ```
 
-## 📸 Screenshots
-| Scan Output | Network Map |
-|---|---|
-| ![scan](docs/scan.png) | ![map](docs/map.png) |
-
 ## 📁 Project Structure
 ```
 Network-Scanner-and-Visualizer/
