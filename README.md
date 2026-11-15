@@ -20,9 +20,9 @@ This tool is for **educational purposes and authorized networks only**. Scanning
 
 ## 🛠️ Tech Stack
 - **Python 3**
-- `scapy`: packet crafting & ARP scanning
+- `Nmap`: packet crafting & ARP scanning
 - `socket`: port scanning
-- `networkx` + `matplotlib`: visualization
+- `Cytoscape.js` + `matplotlib`: visualization
 
 <!-- Replace with the libraries you actually used -->
 
