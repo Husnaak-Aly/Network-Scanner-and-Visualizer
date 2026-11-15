@@ -1,38 +1,83 @@
-# Interactive Network Scanner and Visualizer
+# 🔍 Network Scanner & Visualizer
 
-A powerful **LAN Discovery and Network Visualization Tool** that scans your local network, detects active devices, identifies operating systems and services, and displays everything in an interactive graphical map.
+> A Python tool that discovers live hosts and open ports on a local network and shows the results as an interactive network map.
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 
----
+## ⚠️ Disclaimer
+This tool is for **educational purposes and authorized networks only**. Scanning networks you do not own or lack permission to test may be illegal.
 
-## 📋 Project Description
+## ✨ Features
+- 🖧 Host discovery using ARP / ICMP ping sweep
+- 🔌 Port scanning on common TCP ports
+- 🏷️ Service and MAC vendor detection
+- 🗺️ Network topology visualization
+- 💾 Export results to CSV / JSON
 
-This tool automates network scanning using **Nmap** and transforms the complex scan results into a beautiful, interactive network graph using **Cytoscape.js**. It helps users visually understand their local network topology, device types, and running services.
+<!-- Edit this list to match what your tool actually does -->
 
----
+## 🛠️ Tech Stack
+- **Python 3**
+- `scapy`: packet crafting & ARP scanning
+- `socket`: port scanning
+- `networkx` + `matplotlib`: visualization
 
-## ✨ Key Features
+<!-- Replace with the libraries you actually used -->
 
-- **Automated Network Scanning** – Discovers all active hosts in a given IP range
-- **Deep Host Enumeration** – Detects OS, open ports, and running services
-- **Interactive Graph Visualization** – Physics-based network map with drag & zoom support
-- **Device Categorization** – Color-coded nodes (Router, Windows, Linux, etc.)
-- **Details on Click** – Click any device to view full information in a sidebar
-- **Clean Data Pipeline** – Python backend + JSON + JavaScript frontend
+## 🚀 Getting Started
 
----
+### Prerequisites
+- Python 3.10+
+- Admin/root privileges (needed for raw packets)
 
-## 🛠️ Technologies Used
+### Installation
+```bash
+git clone https://github.com/Husnaak-Aly/Network-Scanner-and-Visualizer.git
+cd Network-Scanner-and-Visualizer
+pip install -r requirements.txt
+```
 
-| Technology          | Purpose                          |
-|---------------------|----------------------------------|
-| **Nmap**            | Network scanning & OS detection  |
-| **Python**          | Backend scripting & data parsing |
-| **Cytoscape.js**    | Interactive graph visualization  |
-| **HTML + CSS + JS** | Frontend interface               |
-| **JSON**            | Data exchange between backend & frontend |
+### Usage
+```bash
+# Scan a subnet
+sudo python scanner.py --target 192.168.1.0/24
 
-**Libraries:**
-- `subprocess`, `xml.etree.ElementTree`, `json` (Python)
+# Scan specific ports and save results
+sudo python scanner.py --target 192.168.1.0/24 --ports 22,80,443 --output results.json
+```
 
----
+## 📸 Screenshots
+| Scan Output | Network Map |
+|---|---|
+| ![scan](docs/scan.png) | ![map](docs/map.png) |
+
+## 📁 Project Structure
+```
+Network-Scanner-and-Visualizer/
+├── scanner.py          # Entry point
+├── modules/
+│   ├── discovery.py    # Host discovery
+│   ├── ports.py        # Port scanning
+│   └── visualize.py    # Graph rendering
+├── docs/               # Screenshots & demo GIF
+├── requirements.txt
+└── README.md
+```
+
+## 🧠 What I Learned
+- How ARP and ICMP work at the packet level
+- TCP handshakes and how port states (open/closed/filtered) are detected
+- Handling timeouts and concurrency for faster scans
+
+## 🔮 Future Improvements
+- [ ] OS fingerprinting
+- [ ] Banner grabbing for service versions
+- [ ] Web dashboard for results
+
+## 👤 Author
+**Husnaak Mansoor** · [LinkedIn](https://www.linkedin.com/in/husnaak-mansoor-78728b2aa) · [GitHub](https://github.com/Husnaak-Aly)
+
+## 📄 License
+MIT
